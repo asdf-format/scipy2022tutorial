@@ -15,4 +15,5 @@ jobs:
       - uses: conda-incubator/setup-miniconda@v2.1.1
         with:
           environment-file: 00_install/environment.yml
+      - run: pip install nbcollection
       - run: python -m nbcollection execute .
