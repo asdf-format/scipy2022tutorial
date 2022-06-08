@@ -11,9 +11,15 @@ jobs:
     name: test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.4.2
-      - uses: conda-incubator/setup-miniconda@v2.1.1
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v3
+        with:
+          path: ~/conda_pkgs_dir
+          key:
+            conda-${{ runner.os }}-${{ hashFiles('00_install/environment.yml') }}
+      - uses: conda-incubator/setup-miniconda@v2
         with:
           environment-file: 00_install/environment.yml
+          use-only-tar-bz2: true
       - run: pip install nbcollection
       - run: python -m nbcollection execute .

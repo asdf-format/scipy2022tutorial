@@ -14,5 +14,4 @@ dependencies:
       - astropy
       - gwcs
       - matplotlib
-      - nbcollection
       - numpy
