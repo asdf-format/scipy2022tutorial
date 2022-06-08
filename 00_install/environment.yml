@@ -1,17 +1,20 @@
-name: spacetelescope_env
+name: spacetelescope-env
 
 dependencies:
   - jupyter
   - notebook
+  - ipython
+  - matplotlib
+  - numpy
+  - pandas
   - pip
   - pytest
   - pytest-xdist
   - python>=3.9
+  - scipy
   - pip:
       - asdf
       - asdf-astropy
       - asdf-standard
       - astropy
       - gwcs
-      - matplotlib
-      - numpy
