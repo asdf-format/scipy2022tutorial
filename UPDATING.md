@@ -1,16 +1,14 @@
 # Getting Everything Up To Date
 
-If you downloaded and installed your directory and conda
-environment before the workshop, good for you!  We appreciate it.
-However, there may well have been some updates made to the materials we are
-going to use in the workshop, so...
+If you downloaded and installed your directory and conda environment before the workshop, good for you!  We appreciate
+it. However, there may well have been some updates made to the materials we are going to use in the workshop, so...
 
 ## 1. Updating your files
 
 ### Updating a local repository cloned with `git`
 
-Assuming you cloned the `scipy2022tutorial` git repository, open up a terminal,
-change your location to that directory, and then run the following:
+Assuming you cloned the `scipy2022tutorial` git repository, open up a terminal, change your location to that directory,
+and then run the following:
 
 ```shell
 cd scipy2022tutorial
@@ -35,8 +33,7 @@ git fetch origin
 git checkout origin/main -b workshop-main
 ```
 
-This is probably overkill unless you already use git regularly. When in doubt,
-please ask the instructors or helpers.
+This is probably overkill unless you already use git regularly. When in doubt, please ask the instructors or helpers.
 
 ### Updating a local directory downloaded with `Download ZIP`
 
@@ -45,12 +42,10 @@ overwrite your local files to make sure that you have the most recent version.
 
 ## 2. Double-checking your Conda environment
 
-Assuming you properly installed your `spacetelescope-env` conda environment, you
-should be able to:
+Assuming you properly installed your `spacetelescope-env` conda environment, you should be able to:
 
-a. activate that conda environment, and
-b. go to the original installation directory, and then
-c. check to see if your environment still meets the requirements.
+a. activate that conda environment, and b. go to the original installation directory, and then c. check to see if your
+environment still meets the requirements.
 
 Let's do that now. Start by activating the `conda` environment:
 
@@ -58,8 +53,8 @@ Let's do that now. Start by activating the `conda` environment:
 conda activate spacetelescope-env
 ```
 
-You may notice a change in your prompt; e.g., `(spacetelescope-env)`.
-Switch to the directory containing the installer by doing the following (your directory path may be different):
+You may notice a change in your prompt; e.g., `(spacetelescope-env)`. Switch to the directory containing the installer
+by doing the following (your directory path may be different):
 
 ```shell
 cd scipy2022tutorial
@@ -97,6 +92,8 @@ and then you can upgrade with `pip install --upgrade <package>`:
 pip install --upgrade numpy
 ```
 
+> If you need a pre-release version from PyPI, add `--pre` to the `pip install` command.
+
 Otherwise, if the package is installed with `conda`, it will show something similar to the following:
 
 ```
@@ -111,12 +108,6 @@ and you can update with `conda update <package>`:
 
 ```shell
 conda update numpy
-```
-
-If you know you need the pre-release version from PyPI, use the `--pre` argument with `pip`:
-
-```shell
-pip install --upgrade --pre numpy
 ```
 
 Once you have performed the updates, check your installation again using `check_env.py`:

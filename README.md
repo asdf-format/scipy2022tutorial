@@ -1,9 +1,9 @@
 # Setup and Installation Instructions for Workshop
 
-To run all the workshop notebooks on your own computer, please be sure your machine is
-configured with the packages in the
-[installation check file](https://github.com/spacetelescope/scipy2022tutorial/blob/main/00_install/).
-These packages are the ones we use to verify that the notebooks are working as expected.
+To run all the workshop notebooks on your own computer, please be sure your machine is configured with the packages in
+the
+[installation check file](https://github.com/spacetelescope/scipy2022tutorial/blob/main/00_install/). These packages are
+the ones we use to verify that the notebooks are working as expected.
 
 These instructions describe setup using `git` and `Miniconda`. It is not strictly necessary to use either of these.
 
@@ -23,10 +23,9 @@ To install WSL, you should follow the instructions provided by Microsoft:
 
 https://docs.microsoft.com/en-us/windows/wsl/install
 
-While you may choose an alternative Linux distribution from
-the default Ubuntu, the instructions below have been tested on Ubuntu, so unless you have a specific reason, we suggest
-you stick with the default. Once you reach the point in the instructions with a working Linux terminal prompt, you can
-proceed to step 1 of these instructions.
+While you may choose an alternative Linux distribution from the default Ubuntu, the instructions below have been tested
+on Ubuntu, so unless you have a specific reason, we suggest you stick with the default. Once you reach the point in the
+instructions with a working Linux terminal prompt, you can proceed to step 1 of these instructions.
 
 > **Optional** While you can run a WSL terminal with the command prompt built into Windows, it's rather bare-bones and
 > you
@@ -46,8 +45,7 @@ In a terminal window, check if Miniconda is already installed:
 conda info
 ```
 
-If Miniconda is not already installed, follow these instructions for your
-operating system:
+If Miniconda is not already installed, follow these instructions for your operating system:
 
 https://conda.io/projects/conda/en/latest/user-guide/install/index.html
 
@@ -112,8 +110,7 @@ If using `git`, clone the workshop repository using
 git clone https://github.com/spacetelescope/scipy2022tutorial.git
 ```
 
-If you elect not to use `git`, you can download the ZIP file by opening the
-green `Code` button at
+If you elect not to use `git`, you can download the ZIP file by opening the green `Code` button at
 https://github.com/spacetelescope/scipy2022tutorial and selecting `Download ZIP`.
 
 ## 6. Create a `conda` environment for the workshop
@@ -123,8 +120,7 @@ packages installed at the same time, making reproducibility and upgrades easier.
 and update environments that have different versions of Python and/or packages installed in them.*
 
 [Create a conda environment for this workshop using a yml file](https://conda.io/docs/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file)
-.
-The python version and all needed packages are listed in
+. The python version and all needed packages are listed in
 [`environment.yml`](https://github.com/spacetelescope/scipy2022tutorial/blob/main/00_install/environment.yml).
 
 Open a terminal window using the appropriate one for your operating system.
@@ -142,8 +138,8 @@ conda env create --file 00_install/environment.yml
 conda activate spacetelescope-env
 ```
 
-The name of the new conda environment created above should now be displayed next
-to the terminal prompt: `(spacetelescope-env)`
+The name of the new conda environment created above should now be displayed next to the terminal
+prompt: `(spacetelescope-env)`
 
 ## 7. Check Installation
 
@@ -154,8 +150,8 @@ required dependencies:
 python 00_install/check_env.py
 ```
 
-If the script reports that some versions do not match for a specific package (for example `numpy`), check first
-whether the package was installed using `conda` or `pip` by using `conda list <package>`:
+If the script reports that some versions do not match for a specific package (for example `numpy`), check first whether
+the package was installed using `conda` or `pip` by using `conda list <package>`:
 
 ```shell
 conda list numpy
@@ -175,6 +171,8 @@ and then you can upgrade with `pip install --upgrade <package>`:
 ```shell
 pip install --upgrade numpy
 ```
+
+> If you need a pre-release version from PyPI, add `--pre` to the `pip install` command.
 
 Otherwise, if the package is installed with `conda`, it will show something similar to the following:
 
@@ -201,18 +199,14 @@ Jupyter server on your local computer, with which you can view the Jupyter noteb
 jupyter notebook
 ```
 
-If successful, your browser would open a new page/tab pointing to
-`localhost` and show you a listing of the current directory, including all the numbered
-notebook subdirectories.
+If successful, your browser will open a new page / tab pointing to `localhost`, showing a listing of the current
+directory (including subdirectories).
 
-Click into one of the notebook directories, double-click on a notebook,
-and wait for it to launch. In the top right corner,
-if you see a blue `Kernel Ready` message appear and disappear,
-then all is well.
+Click into one of the notebook directories, double-click on a notebook, and wait for it to launch. In the top right
+corner, if you see a blue `Kernel Ready` message appear and disappear, then all is well.
 
-If you see a red `Kernel Error` in the top right corner, click on it
-and scroll down to see the error message. If it says `FileNotFoundError`,
-shut down the notebook server on your terminal and run this command:
+If you see a red `Kernel Error` in the top right corner, click on it and scroll down to see the error message. If it
+says `FileNotFoundError`, shut down the notebook server on your terminal and run this command:
 
 ```shell
 python -m ipykernel install --user
