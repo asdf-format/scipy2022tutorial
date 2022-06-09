@@ -8,6 +8,8 @@ Usage::
 
 """
 
+import warnings
+
 from packaging.version import Version
 
 # NOTE: Update minversion values as needed.
@@ -46,7 +48,8 @@ def check_package(
             str(minimum_version)
         ):
             print(
-                f'Error: "{package_name}" version "{minimum_version}" or later is required; you have version "{installed_version}"'
+                f'Error: "{package_name}" version "{minimum_version}" or later is required; '
+                f'you have version "{installed_version}"'
             )
             success = False
         if success and verbose:
@@ -59,10 +62,14 @@ def run_checks():
     for package_name, min_version in PACKAGES.items():
         if not check_package(package_name, minimum_version=min_version):
             errors.append(package_name)
+    print("\n")
     if any(errors):
-        print("\nThere are errors that you must resolve before running the tutorials.")
+        warnings.warn(
+            "There are errors that you must resolve before running the tutorials."
+        )
+        exit(1)
     else:
-        print("\nYour Python environment is good to go!")
+        print("Your Python environment is good to go!")
 
 
 if __name__ == "__main__":

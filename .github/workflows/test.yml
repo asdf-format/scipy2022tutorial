@@ -21,5 +21,6 @@ jobs:
         with:
           environment-file: 00_install/environment.yml
           use-only-tar-bz2: true
+      - run: python ./00_install/check_env.py
       - run: pip install nbcollection
       - run: python -m nbcollection execute .
