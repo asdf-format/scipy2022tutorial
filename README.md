@@ -143,11 +143,11 @@ prompt: `(spacetelescope-env)`
 
 ## 7. Check Installation
 
-In the terminal you used in the preceding step, run the `check_env.py` script to check the Python environment and some
-required dependencies:
+In the terminal you used in the preceding step, run the `verify_install.py` script to check the Python environment and
+some required dependencies:
 
 ```shell
-python 00_install/check_env.py
+python 00_install/verify_install.py
 ```
 
 If the script reports that some versions do not match for a specific package (for example `numpy`), check first whether
@@ -180,7 +180,7 @@ Otherwise, if the package is installed with `conda`, it will show something simi
 # packages in environment at /opt/miniconda3/envs/test:
 #
 # Name                    Version                   Build  Channel
-numpy                     1.22.3          py310hdcd3fac_0  
+numpy                     1.22.3          py310hdcd3fac_0
 numpy-base                1.22.3          py310hfd2de13_0
 ```
 

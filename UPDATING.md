@@ -63,14 +63,14 @@ cd scipy2022tutorial
 Next, we check if the environment is still up-to-date:
 
 ```shell
-python 00_install/check_env.py
+python 00_install/verify_install.py
 ```
 
 If this check reports no issues, you are done. Otherwise, continue below.
 
 ## 3. Updating Python packages
 
-If the `check_env.py` script reports that some package (for example `numpy`)
+If the `verify_install.py` script reports that some package (for example `numpy`)
 is not up-to-date, we need to check where the package came from with `conda list`:
 
 ```shell
@@ -100,7 +100,7 @@ Otherwise, if the package is installed with `conda`, it will show something simi
 # packages in environment at /opt/miniconda3/envs/test:
 #
 # Name                    Version                   Build  Channel
-numpy                     1.22.3          py310hdcd3fac_0  
+numpy                     1.22.3          py310hdcd3fac_0
 numpy-base                1.22.3          py310hfd2de13_0
 ```
 
@@ -110,10 +110,10 @@ and you can update with `conda update <package>`:
 conda update numpy
 ```
 
-Once you have performed the updates, check your installation again using `check_env.py`:
+Once you have performed the updates, check your installation again using `verify_install.py`:
 
 ```shell
-python 00_install/check_env.py
+python 00_install/verify_install.py
 ```
 
 You should now be up-to-date.
