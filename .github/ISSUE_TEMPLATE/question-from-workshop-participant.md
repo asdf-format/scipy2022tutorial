@@ -1,9 +1,7 @@
 ---
-name: Question from workshop participant
-about: Template for participant to ask question to instruction
+name: Question from workshop participant about: Template for participant to ask question to instruction
 title: "[Question] Summarize your question here"
-labels: workshop-question
-assignees: ''
+labels: workshop-question assignees: ''
 
 ---
 

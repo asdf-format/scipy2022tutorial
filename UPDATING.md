@@ -53,8 +53,8 @@ Let's do that now. Start by activating the `conda` environment:
 conda activate asdf-tutorial-env
 ```
 
-You may notice a change in your prompt; e.g., `(asdf-tutorial-env)`. Switch to the directory containing the installer
-by doing the following (your directory path may be different):
+You may notice a change in your prompt; e.g., `(asdf-tutorial-env)`. Switch to the directory containing the installer by
+doing the following (your directory path may be different):
 
 ```shell
 cd scipy2022tutorial
