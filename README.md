@@ -135,11 +135,11 @@ And finally, on any platform, to install and activate the `spacetelescope` envir
 
 ```shell
 conda env create --file 00_install/environment.yml
-conda activate spacetelescope-env
+conda activate asdf-tutorial-env
 ```
 
 The name of the new conda environment created above should now be displayed next to the terminal
-prompt: `(spacetelescope-env)`
+prompt: `(asdf-tutorial-env)`
 
 ## 7. Check Installation
 

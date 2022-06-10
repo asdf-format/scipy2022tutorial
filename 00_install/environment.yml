@@ -1,4 +1,4 @@
-name: spacetelescope-env
+name: asdf-tutorial-env
 
 dependencies:
   - jupyter

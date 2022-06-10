@@ -42,7 +42,7 @@ overwrite your local files to make sure that you have the most recent version.
 
 ## 2. Double-checking your Conda environment
 
-Assuming you properly installed your `spacetelescope-env` conda environment, you should be able to:
+Assuming you properly installed your `asdf-tutorial-env` conda environment, you should be able to:
 
 a. activate that conda environment, and b. go to the original installation directory, and then c. check to see if your
 environment still meets the requirements.
@@ -50,10 +50,10 @@ environment still meets the requirements.
 Let's do that now. Start by activating the `conda` environment:
 
 ```shell
-conda activate spacetelescope-env
+conda activate asdf-tutorial-env
 ```
 
-You may notice a change in your prompt; e.g., `(spacetelescope-env)`. Switch to the directory containing the installer
+You may notice a change in your prompt; e.g., `(asdf-tutorial-env)`. Switch to the directory containing the installer
 by doing the following (your directory path may be different):
 
 ```shell
