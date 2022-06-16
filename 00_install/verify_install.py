@@ -12,7 +12,7 @@ import importlib.metadata
 import re
 import sys
 from pathlib import Path
-from typing import Mapping, Dict, Tuple
+from typing import Mapping, Dict, Collection
 
 import yaml
 from packaging.version import Version
@@ -26,28 +26,31 @@ MINIMUM_DEPENDENCY_PATTERN = re.compile(r".*>=?\s*([\d\w.]+).*")
 
 def parse_dependency(
     dependency: str,
-    dependencies: Dict[str, Tuple[str, str]],
     version_specification_pattern: re.Pattern = DEPENDENCY_PATTERN,
-):
-    match = re.match(version_specification_pattern, dependency)
-    if match is not None:
-        groups = match.groups()
-        dependencies[groups[0]] = groups[1]
+) -> Dict[str, str]:
+    parsed = {}
+    if isinstance(dependency, str):
+        match = re.match(version_specification_pattern, dependency)
+        if match is not None:
+            groups = match.groups()
+            parsed.update({groups[0]: groups[1]})
+    elif isinstance(dependency, Mapping):
+        for subdependency in dependency.values():
+            parsed.update(
+                parse_dependency(subdependency, version_specification_pattern)
+            )
+    elif isinstance(dependency, Collection):
+        for subdependency in dependency:
+            parsed.update(
+                parse_dependency(subdependency, version_specification_pattern)
+            )
+    return parsed
 
 
 DEPENDENCIES = {}
 
 for dependency in environment["dependencies"]:
-    if isinstance(dependency, str):
-        if "python" not in dependency and dependency not in "pip":
-            parse_dependency(dependency, DEPENDENCIES)
-    elif isinstance(dependency, Mapping):
-        dependency = list(dependency.items())[0]
-        if dependency[0] == "pip":
-            [
-                parse_dependency(dependency=pip_dependency, dependencies=DEPENDENCIES)
-                for pip_dependency in dependency[1]
-            ]
+    DEPENDENCIES.update(parse_dependency(dependency))
 
 INSTALLED_PACKAGES = {
     distribution.metadata["name"].lower(): distribution.metadata["version"]
@@ -80,14 +83,15 @@ def check_package(
 if __name__ == "__main__":
     errors = []
     for package_name, specification in DEPENDENCIES.items():
-        if specification is not None:
-            min_version = re.match(MINIMUM_DEPENDENCY_PATTERN, specification)
-            if min_version is not None:
-                min_version = Version(min_version.groups()[0])
-        else:
-            min_version = None
-        if not check_package(package_name, minimum_version=min_version):
-            errors.append(package_name)
+        if package_name not in ["python"]:
+            if specification is not None:
+                min_version = re.match(MINIMUM_DEPENDENCY_PATTERN, specification)
+                if min_version is not None:
+                    min_version = Version(min_version.groups()[0])
+            else:
+                min_version = None
+            if not check_package(package_name, minimum_version=min_version):
+                errors.append(package_name)
     if any(errors):
         print(
             f"You must resolve {sum(errors)} errors (above) before running the tutorials."
