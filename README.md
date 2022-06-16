@@ -1,4 +1,8 @@
-# Setup and Installation Instructions for Workshop
+# ASDF (Advanced Scientific Data Format) SciPy Tutorial 2022
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+[![test](https://github.com/asdf-format/scipy2022tutorial/actions/workflows/test.yml/badge.svg)](https://github.com/asdf-format/scipy2022tutorial/actions/workflows/test.yml)
 
 To run all the workshop notebooks on your own computer, please be sure your machine is configured with the packages in
 the

@@ -12,7 +12,7 @@ import importlib.metadata
 import re
 import sys
 from pathlib import Path
-from typing import Mapping, Dict, Collection
+from typing import Collection, Dict, Mapping
 
 import yaml
 from packaging.version import Version
@@ -68,7 +68,8 @@ def check_package(
                 minimum_version = Version(str(minimum_version))
             if installed_version < minimum_version:
                 print(
-                    f'"{package_name}" is installed ({installed_version}) but out of date ({minimum_version} required)',
+                    f'"{package_name}" is installed ({installed_version}) '
+                    f"but out of date ({minimum_version} required)",
                     file=sys.stderr,
                 )
                 return False
@@ -85,7 +86,10 @@ if __name__ == "__main__":
     for package_name, specification in DEPENDENCIES.items():
         if package_name not in ["python"]:
             if specification is not None:
-                min_version = re.match(MINIMUM_DEPENDENCY_PATTERN, specification)
+                min_version = re.match(
+                    MINIMUM_DEPENDENCY_PATTERN,
+                    specification,
+                )
                 if min_version is not None:
                     min_version = Version(min_version.groups()[0])
             else:
@@ -94,7 +98,8 @@ if __name__ == "__main__":
                 errors.append(package_name)
     if any(errors):
         print(
-            f"You must resolve {sum(errors)} errors (above) before running the tutorials."
+            f"You must resolve {sum(errors)} errors (above) "
+            f"before running the tutorials."
         )
         exit(1)
     else:
