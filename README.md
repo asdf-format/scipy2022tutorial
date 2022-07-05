@@ -105,7 +105,7 @@ If the output shows a Git version, skip to the next step. Otherwise, install Git
 conda install git
 ```
 
-## 5. Clone this repository, or download and extract a ZIP file, from GitHub
+## 4. Clone this repository, or download and extract a ZIP file, from GitHub
 
 If using `git`, clone the workshop repository using
 [git](https://help.github.com/articles/set-up-git/):
@@ -117,7 +117,7 @@ git clone https://github.com/spacetelescope/scipy2022tutorial.git
 If you elect not to use `git`, you can download the ZIP file by opening the green `Code` button at
 https://github.com/spacetelescope/scipy2022tutorial and selecting `Download ZIP`.
 
-## 6. Create a `conda` environment for the workshop
+## 5. Create a `conda` environment for the workshop
 
 > *Miniconda includes an environment manager called conda. Environments allow you to have multiple sets of Python
 packages installed at the same time, making reproducibility and upgrades easier. You can create, export, list, remove,
@@ -145,7 +145,7 @@ conda activate asdf-tutorial-env
 The name of the new conda environment created above should now be displayed next to the terminal
 prompt: `(asdf-tutorial-env)`
 
-## 7. Check Installation
+## 6. Check Installation
 
 In the terminal you used in the preceding step, run the `verify_install.py` script to check the Python environment and
 some required dependencies:
@@ -194,7 +194,7 @@ and you can update with `conda update <package>`:
 conda update numpy
 ```
 
-## 8. Starting Jupyter Notebook
+## 7. Starting Jupyter Notebook
 
 Making sure your terminal is in the `scipy2022tutorial` directory (you can use `pwd` to check), you can then start the
 Jupyter server on your local computer, with which you can view the Jupyter notebooks:
