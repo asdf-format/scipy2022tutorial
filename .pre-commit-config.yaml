@@ -9,9 +9,12 @@ repos:
     args: ["--unsafe"]
   - id: debug-statements
   - id: end-of-file-fixer
-    exclude: ".*fits"
   - id: trailing-whitespace
-    exclude: ".*fits"
+
+- repo: https://github.com/kynan/nbstripout
+  rev: 0.5.0
+  hooks:
+    - id: nbstripout
 
 - repo: https://github.com/pycqa/isort
   rev: 5.10.1
