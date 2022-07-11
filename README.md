@@ -6,14 +6,14 @@
 
 To run all the workshop notebooks on your own computer, please be sure your machine is configured with the packages in
 the
-[installation check file](https://github.com/spacetelescope/scipy2022tutorial/blob/main/00_install/). These packages are
+[installation check file](https://github.com/asdf-format/scipy2022tutorial/blob/main/00_install/). These packages are
 the ones we use to verify that the notebooks are working as expected.
 
 These instructions describe setup using `git` and `Miniconda`. It is not strictly necessary to use either of these.
 
 > If you have any problems with any of these steps, please check if your problem has already been reported
-> as [an issue](https://github.com/spacetelescope/scipy2022tutorial/issues/). If not, please
-> [create a new issue](https://github.com/spacetelescope/scipy2022tutorial/issues/new?assignees=&labels=workshop-question&template=question-from-workshop-participant.md&title=%5BQuestion%5D+Summarize+your+question+here)
+> as [an issue](https://github.com/asdf-format/scipy2022tutorial/issues/). If not, please
+> [create a new issue](https://github.com/asdf-format/scipy2022tutorial/issues/new?assignees=&labels=workshop-question&template=question-from-workshop-participant.md&title=%5BQuestion%5D+Summarize+your+question+here)
 > to ask your question.
 
 ## 0. (Only for Windows) Install WSL
@@ -111,11 +111,11 @@ If using `git`, clone the workshop repository using
 [git](https://help.github.com/articles/set-up-git/):
 
 ```shell
-git clone https://github.com/spacetelescope/scipy2022tutorial.git
+git clone https://github.com/asdf-format/scipy2022tutorial.git
 ```
 
 If you elect not to use `git`, you can download the ZIP file by opening the green `Code` button at
-https://github.com/spacetelescope/scipy2022tutorial and selecting `Download ZIP`.
+https://github.com/asdf-format/scipy2022tutorial and selecting `Download ZIP`.
 
 ## 5. Create a `conda` environment for the workshop
 
@@ -125,7 +125,7 @@ and update environments that have different versions of Python and/or packages i
 
 [Create a conda environment for this workshop using a yml file](https://conda.io/docs/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file)
 . The python version and all needed packages are listed in
-[`environment.yml`](https://github.com/spacetelescope/scipy2022tutorial/blob/main/00_install/environment.yml).
+[`environment.yml`](https://github.com/asdf-format/scipy2022tutorial/blob/main/00_install/environment.yml).
 
 Open a terminal window using the appropriate one for your operating system.
 
@@ -135,7 +135,7 @@ Now navigate to this directory in the terminal:
 cd scipy2022tutorial
 ```
 
-And finally, on any platform, to install and activate the `spacetelescope` environment, type:
+And finally, on any platform, to install and activate the `asdf-tutorial-env` environment, type:
 
 ```shell
 conda env create --file 00_install/environment.yml
